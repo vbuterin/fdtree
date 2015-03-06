@@ -93,6 +93,14 @@ def rebalance_increase(t, d):
     return [t[0], t[1], new_children]
 
 
+# Possible options for different designs:
+#
+# i. when rebalancing, compare nodes by G values, not by children counts. This
+# may make it substantially easier to reason about width invariants
+# ii. as a threshold, don't use one's G value, instead use one's child count
+# vs. the square root of one's grandchild count
+
+
 # If a node has been decreased and it has too many children given its total
 # number of descendants, then we find the smallest pair of adjacent children
 # (in terms of their combined number of children) and join them together
